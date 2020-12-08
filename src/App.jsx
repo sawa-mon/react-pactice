@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Colorful from "./components/Coloerful";
 
 const App = () => {
+  const onClickCountUp = () => {
+    setNum(num + 1);
+  };
+
+  const [num, setNum] = useState(0);
+
   return (
     <>
-      <button>ボタン</button>
-      <Colorful color="pink">
-        ここに売ったコメントがchildrenとして表記される
-      </Colorful>
+      <button onClick={onClickCountUp}>ボタン</button>
+      <Colorful color="blue">{num}</Colorful>
     </>
   );
 };
